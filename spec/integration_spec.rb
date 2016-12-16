@@ -11,3 +11,12 @@ describe('The add shoe store path', type: :feature) do
     expect(page).to have_content 'Foot Locker'
   end
 end
+
+describe('The add shoe brand path', type: :feature) do
+  it('Takes the user input and creates a shoe brand object') do
+    visit('/')
+    fill_in('brand_name', with: 'Merrell')
+    click_on('Add Brand')
+    expect(page).to have_content 'Merrell'
+  end
+end
