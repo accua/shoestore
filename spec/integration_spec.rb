@@ -20,3 +20,13 @@ describe('The add shoe brand path', type: :feature) do
     expect(page).to have_content 'Merrell'
   end
 end
+
+describe('The edit shoe store path', type: :feature) do
+  it('Takes the user to the store edit form') do
+    visit('/')
+    fill_in('store_name', with: 'foot locker')
+    click_on('Add Store')
+    click_on('mode_edit')
+    expect(page).to have_content 'Update Store'
+  end
+end
