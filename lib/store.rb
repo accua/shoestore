@@ -7,8 +7,9 @@ class Store < ActiveRecord::Base
 private
 
   def capitalize_name
-    self.name = self.name.split.map(&:capitalize).join(' ')
-
+    store_name = self.name.split
+    new_name = store_name.map { |store| store.capitalize }
+    self.name = new_name.join(' ')
   end
 
 
