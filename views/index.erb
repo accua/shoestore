@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col l6">
+    <h3>Stores:</h3>
+    <% if @stores.any? %>
+    <ul>
+      <% @stores.each do |store| %>
+        <li><a class="btn" href="/stores/<%= store.id %>"><%= store.name %></a>
+        <a class="btn-floating btn-small red" href="/stores/<%= store.id %>/edit"><i class="large material-icons">mode_edit</i></a></li>
+      <% end %>
+    </ul>
+    <form action="/stores" method="post">
+      <input type="text" name="store_name" placeholder="Store Name">
+      <button class="btn" type="submit" name="button">Add Store</button> <a class="btn" href="/method">Nuke</a>
+
+    </form>
+    <% else %>
+      <p>There aren't any stores to display, why don't you add one?</p>
+      <form action="/stores" method="post">
+        <input type="text" name="store_name" placeholder="Store Name">
+        <button class="btn" type="submit" name="button">Add Store</button>
+      </form>
+    <% end %>
+  </div>
+  <div class="col l6">
+    <h3>Brands:</h3>
+    <% if @brands.any? %>
+    <ul>
+      <% @brands.each do |brand| %>
+        <li><%= brand.name %></li>
+      <% end %>
+    </ul>
+    <form action="/brands" method="post">
+      <input type="text" name="brand_name" placeholder="Brand Name">
+      <button class="btn" type="submit" name="button">Add Brand</button>
+    </form>
+    <% else %>
+      <p>There aren't any brands to display, why don't you add one?</p>
+      <form action="/brands" method="post">
+        <input type="text" name="brand_name" placeholder="Brand Name">
+        <button class="btn" type="submit" name="button">Add Brand</button>
+      </form>
+    <% end %>
+  </div>
+</div>

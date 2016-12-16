@@ -1,0 +1,18 @@
+<h2><%= @store.name %></h2>
+
+<ul>
+  <% @store.brands.each do |brand| %>
+    <li><%= brand.name %></li>
+  <% end %>
+</ul>
+
+<p>Choose From Available Brands To Display At This Store.</p>
+<form action="/stores/:id/" method="post">
+  <input type="hidden" name="store_id" value="<%= @store.id %>">
+  <select name="brand">
+    <% @brands.each do |brand| %>
+      <option><%= brand.name %></option>
+    <% end %>
+  </select>
+  <button class="btn" type="submit">Choose Brand</button>
+</form>

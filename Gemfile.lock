@@ -50,6 +50,7 @@ GEM
     rack-test (0.6.3)
       rack (>= 1.0)
     rake (12.0.0)
+    rb-readline (0.5.3)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -96,8 +97,12 @@ DEPENDENCIES
   pg
   pry
   rake
+  rb-readline
   rspec
   shoulda-matchers (~> 2.0)
   sinatra
   sinatra-activerecord
   sinatra-contrib
+
+BUNDLED WITH
+   1.13.6
