@@ -43,3 +43,15 @@ describe('The update shoe store path', type: :feature) do
     expect(page).to have_content "Journey's"
   end
 end
+
+describe('The delete shoe store path', type: :feature) do
+  it('Deletes the selected shoe store') do
+    visit('/')
+    fill_in('store_name', with: 'foot locker')
+    click_on('Add Store')
+    click_on('mode_edit')
+    click_on('Delete Store')
+    visit('/')
+    expect(page).to have_content "There aren't any stores to display, why don't you add one?"
+  end
+end
