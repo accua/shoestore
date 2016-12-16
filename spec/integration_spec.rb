@@ -55,3 +55,21 @@ describe('The delete shoe store path', type: :feature) do
     expect(page).to have_content "There aren't any stores to display, why don't you add one?"
   end
 end
+
+describe('The add shoe brand object to shoe store object path', type: :feature) do
+  it('Adds a shoe brand object that already exists to the specified shoe store.') do
+    visit('/')
+    fill_in('store_name', with: 'foot locker')
+    click_on('Add Store')
+    fill_in('brand_name', with: 'danner')
+    click_on('Add Brand')
+    fill_in('brand_name', with: 'nike')
+    click_on('Add Brand')
+    click_on('Foot Locker')
+    select('Danner')
+    click_on('Choose Brand')
+    select('Nike')
+    click_on('Choose Brand')
+    expect(page).to have_content "Danner Nike"
+  end
+end
