@@ -8,11 +8,11 @@ require('shoulda-matchers')
 
 RSpec.configure do |config|
   config.after(:each) do
-    Store.all().each() do |store|
-  store.destroy()
-end
-Brand.all.each do |brand|
-  brand.destroy
-end
+    Store.all.each do |store|
+      store.destroy
+    end
+    Brand.all.each do |brand|
+      brand.destroy
+    end
   end
 end
