@@ -36,7 +36,7 @@ patch('/stores/:id') do
   name = params.fetch("store_update")
   @store = Store.find(params[:id].to_i)
   @store.update({:name => name})
-  erb :store
+  redirect('/')
 end
 
 delete('/stores/:id') do

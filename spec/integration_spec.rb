@@ -30,3 +30,16 @@ describe('The edit shoe store path', type: :feature) do
     expect(page).to have_content 'Update Store'
   end
 end
+
+describe('The update shoe store path', type: :feature) do
+  it('Takes the user input and renames the store') do
+    visit('/')
+    fill_in('store_name', with: 'foot locker')
+    click_on('Add Store')
+    click_on('mode_edit')
+    fill_in('store_update', with: "Journey's")
+    click_on('Update Store')
+    visit('/')
+    expect(page).to have_content "Journey's"
+  end
+end
