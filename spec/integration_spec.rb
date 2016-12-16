@@ -2,3 +2,12 @@ require('capybara/rspec')
 require('./app')
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
+
+describe('The add shoe store path', type: :feature) do
+  it('Takes the user input and creates a shoe store object') do
+    visit('/')
+    fill_in('store_name', with: 'foot locker')
+    click_on('Add Store')
+    expect(page).to have_content 'Foot Locker'
+  end
+end
