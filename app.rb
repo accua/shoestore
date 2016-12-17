@@ -63,13 +63,3 @@ post('/stores/:id/') do
   @store.brands.push(new_brand)
   erb :store
 end
-
-get("/method") do
-  Store.all.each do |store|
-    store.destroy
-  end
-  Brand.all.each do |brand|
-    brand.destroy
-  end
-  redirect "/"
-end

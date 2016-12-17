@@ -10,9 +10,12 @@
 <header class="container">
   <%= erb :header %>
 </header>
-<div class="container">
+<main class="container">
   <%= yield %>
-</div>
+</main>
+<footer>
+  <%= erb :footer %>
+</footer>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>

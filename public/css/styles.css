@@ -1,3 +1,21 @@
 h1, h3, p, ul, h2 {
   text-align: center;
 }
+
+body {
+  background-color: FFF5C3;
+}
+
+a {
+  color: 505050;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+ flex: 1 0 auto;
+}
